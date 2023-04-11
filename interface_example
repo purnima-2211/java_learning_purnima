@@ -1,0 +1,55 @@
+interface Shape{
+    public float area();
+}
+
+class Circle implements Shape{
+
+    private float radius;
+    public Circle(float radius){
+        this.radius = radius;
+    }
+
+    @Override
+    public float area() {
+        
+        return (float)3.14 * radius* radius;
+        
+    }
+    public void test2(){
+
+    }
+    
+}
+class Square implements Shape{
+
+    private int length;
+    public Square(int length){
+        this.length = length;
+    }
+
+    @Override
+    public float area() {
+        
+        return length * length;
+        
+    }
+    public void test(){
+
+    }
+    
+}
+
+class Printer{
+    public void print(Shape shape){
+        System.out.println(shape.area());
+    }
+
+
+public static void main(String[] args) {
+    Shape circle = new Circle((float)2.34);
+    Shape square = new Square(4);
+    Printer printer = new Printer();
+    printer.print(circle);
+    printer.print(square);
+}
+}
