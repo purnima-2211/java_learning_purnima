@@ -16,7 +16,7 @@ class Rectangle implements Polygon{
     }
 }
 
-class main{
+class demo{
    public static void main(String[] args) {
        
         Rectangle rectangle = new Rectangle() ;
