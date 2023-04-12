@@ -1,0 +1,19 @@
+import java.io.File;
+import java.io.IOException;
+
+public class FileHandling {
+
+	public static void main(String[] args) throws IOException {
+		File file = new File("./resume.txt");
+		/*System.out.println(file.mkdir()); // making a folder
+		file.createNewFile();// check for throw IO
+		if(file.exists())
+			file.delete();
+		file.createNewFile(); //file is present then delete if its not present then create
+		/*System.out.println(file.delete());
+		System.out.println(file.isHidden());  //checking for hidden file 
+		System.out.println(file.canWrite()); //checking for read only 
+		System.out.println(file.setWritable(true)); */  //setting it to write permission
+	}
+
+}
