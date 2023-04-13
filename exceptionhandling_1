@@ -1,0 +1,27 @@
+public class Program1{
+	public static void main(String[] args) {
+		method();
+		
+	}
+	
+	public static void method(){
+		int fNumber = 5;
+		int sNumber = 0;
+		int result= 0;
+		
+	try {
+		result = fNumber/sNumber;
+	}
+	catch(ArithmeticException e) {
+		System.out.println(e.toString());
+		
+	}
+	
+	finally {
+		System.out.println("finally block");
+	}
+		
+		System.out.println(result);
+		
+	}
+}
