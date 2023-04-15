@@ -6,7 +6,7 @@ public class VectorPractice{
 		v1.add("purnima"); //adding elements to list
 		v1.add("rani");
 		
-		Vector v2 = new Vector();
+	/*	Vector v2 = new Vector();
 		v2.add("lakshmi");
 		v2.add("priya");
 		
@@ -27,14 +27,16 @@ public class VectorPractice{
 		v1.clear();//clearing entire list
 		
 		
-		
+		/*
 		System.out.println(v2.get(0)); //retrieving a particular element from the list
 		v2.set(1,"akshaya");
 		System.out.println(v2);
 		
 		System.out.println(v1.capacity()); // size = number of elements in the lit
 		System.out.println(v1.size()); // capacity = capacity of the internal array
-		
+		*/
+		Object arr[] = v1.toArray();  // storing the v1 list in array form by creating object
+		System.out.println(Arrays.toString(arr));
 		
 	}
 }
