@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class VectorPractice{
+	public static void main(String[] args){
+		Vector v1 = new Vector(); // creating a vector list
+		v1.add("purnima"); //adding elements to list
+		v1.add("rani");
+		
+		Vector v2 = new Vector();
+		v2.add("lakshmi");
+		v2.add("priya");
+		
+		System.out.println(v2);
+		
+		v1.addAll(0,v2);//adding from one vector list to other
+		v1.remove(0); //remove a particular element from the list
+		
+		System.out.println(v2.contains("hari")); //checking if the element is present in the list
+		
+		
+		System.out.println(v1);
+		
+		
+		v1.removeAll(v2); //removing all the elements 
+		System.out.println(v2);
+		
+		v1.clear();//clearing entire list
+		
+		
+		
+		System.out.println(v2.get(0)); //retrieving a particular element from the list
+		v2.set(1,"akshaya");
+		System.out.println(v2);
+		
+		System.out.println(v1.capacity()); // size = number of elements in the lit
+		System.out.println(v1.size()); // capacity = capacity of the internal array
+		
+		
+	}
+}
+
+
+
+// to verify a list of values in another list it doesn't depend on the order of elements//
