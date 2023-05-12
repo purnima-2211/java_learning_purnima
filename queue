@@ -1,0 +1,150 @@
+import java.util.*;
+public class Queue {
+    
+    int arr[];
+    int size;
+    int f=-1,r=-1;
+    
+    Queue(int n){
+    	arr=new int[n];
+    	size=n;
+    }
+    
+    boolean isEmpty() {
+    	if(r==-1 || f>r) {
+    		return true;
+    	}else {
+    		return false;
+    	}
+    }
+    void enqueue(int data) {
+    	//checking if the queue is already full
+    	if(r==(size-1)) {
+    		System.out.println("overflow");
+    		return;
+    	}
+    	else {
+    		if(f==-1 && r==-1) {
+    			f=0;
+    			r=0;
+    		}else {
+    			r=r+1;
+    		}
+    		arr[r]=data;
+    	}
+    }
+    
+    void dequeue() {
+    	//checking whether queue is empty or not
+    	if(isEmpty()) {
+    		System.out.println("underflow");
+    		return;
+    	}
+    	else {
+    		int item=arr[f];
+            System.out.println("Element deleted from queue is : "+ item);
+            if(f == r)  {  
+                f= -1;  
+                r= -1 ;  
+            }
+            else{
+                f++;
+            }
+
+    	}
+    }
+    
+    void display() {
+        //checking whether queue is empty or not
+        if (isEmpty()){
+            System.out.println("Queue is empty");
+            return;
+        }
+        else {
+            System.out.println("Elements are : ");
+        for (int i = f; i <= r; i++)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+        }
+    }
+    
+    void queueSize() {
+    	int c=0;
+    	//checking whether queue is empty or not
+    	if(f==-1) {
+    		System.out.println("Queue is empty");
+            return;
+    	}else {
+    		for(int i=f;i<=r;i++) {
+        		c++;
+        	}
+    	}
+    	
+    	System.out.println("size of queue is : "+c);
+    }
+    
+    boolean IsPresent(int item) {
+    	//checking whether queue is empty or not
+    	if(isEmpty()) {
+			return false;
+    	}
+		for(int i=f;i<=r;i++) {
+				if(arr[i]==item) {
+					return true;
+				}
+			}
+			return false;
+    }
+    
+	public static void main(String[] args) {
+		
+		Queue q=new Queue(10);
+		Scanner sc=new Scanner(System.in);
+		    System.out.println("1: Inserting element to queue(enqueue)");
+	        System.out.println("2: Deleting element from queue(dequeue)");
+	        System.out.println("3: Display all the elements of queue ");
+	        System.out.println("4: Display the size of queue");
+	        System.out.println("5: Find the element");
+	        System.out.println("6: Exit");
+	        int ch;
+	        do {
+	            //taking user choice 
+	            System.out.println("Enter your choice : ");
+	            ch=sc.nextInt();
+	            switch (ch) {
+	                    //calling functions according to the choice of user
+	                    case 1: {
+	                        System.out.println("enter element to be inserted:");
+	                        int item=sc.nextInt();
+	                        q.enqueue(item);
+	                        break;
+	                    }
+	                case 2: q.dequeue();
+	                    break;
+	                case 3: q.display();
+	                    break;
+	                case 4: q.queueSize();
+	                    break;
+	                case 5: {
+	                		System.out.println("Enter the item to be searched");
+	                		int item=sc.nextInt();
+	                		if(q.isEmpty()) {
+	                			System.out.println("Queue is empty");	
+	                		}
+	                		if(q.IsPresent(item)) {
+		                		System.out.println("item is present");
+		                	}else {
+		                		System.out.println("item is not present");
+		                	}
+	                	  break;
+	                	  } 
+	                case 6: System.out.println("Exit");
+	                    break;
+	                default: System.out.println("Invalid choice");
+	            }
+	        }
+	        while(ch!=5);
+
+	}
+
+}
