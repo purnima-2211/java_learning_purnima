@@ -1,0 +1,19 @@
+Design a Queue class such that it satisfies following conditions:
+
+1. Constructor with no arguments and with one argument, size of the queue
+
+2. Enqueue operation which takes one input item and adds it to the queue and returns true if operation is successful
+
+3. Dequeue operation which removes the item from the queue and returns that item
+
+4. Print operation which prints the whole queue
+
+5. Clear operation which clears all contents of the queue
+
+6. Size operation which returns the number of items present in the queue at any point of time
+
+7. IsPresent operation which takes input item to be found, it should return true/false
+
+Please handle corner cases such as overflow and underflow of queue.
+
+With default constructor take 10 as the default size of queue
