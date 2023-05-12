@@ -1,0 +1,42 @@
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class queue<T> {
+    private Queue<T> queue;
+
+    // 1.Constructor with no arguments
+    public queue() {
+        this.queue = new LinkedList<T>();
+    }
+
+    // 2.Enqueue operation to add an item to the queue
+    public boolean enqueue(T item) {
+        return queue.offer(item);
+    }
+
+    // 3.Dequeue operation to remove an item from the queue and return it
+    public T dequeue() {
+        return queue.poll();
+    }
+
+    // 4.Print operation to print the whole queue
+    public void print() {
+        System.out.println(queue.toString());
+    }
+
+    // 5.Clear operation to clear all contents of the queue
+    public void clear() {
+        queue.clear();
+    }
+
+    // 6.Size operation to return the number of items in the queue
+    public int size() {
+        return queue.size();
+    }
+
+    // 7.IsPresent operation to check if an item is present in the queue
+    public boolean isPresent(T item) {
+        return queue.contains(item);
+    }
+}
